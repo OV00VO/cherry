@@ -15,7 +15,7 @@ def page_summary_body():
         f"which may become distorted.\n"
         f"Look for these signs on young leaves and in the inner canopy.\n\n"
         f"**Project Dataset**\n"
-        f"* The available dataset contains of in total 4208 in a\n 50 percent split of infecten and uninfected leaves."
+        f"* The available dataset contains of in total 4208 images\n with a 50 percent split of infected and uninfected leaves."
         )
 
     st.write(
