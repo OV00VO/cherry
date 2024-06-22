@@ -18,8 +18,8 @@ def page_mildew_visualizer_body():
     version = 'v1'
     if st.checkbox("Difference between average and variability image"):
       
-      avg_parasitized = plt.imread(f"outputs/{version}/avg_var_infected.jpg")
-      avg_uninfected = plt.imread(f"outputs/{version}/avg_var_uninfected.jpg")
+      avg_parasitized = plt.imread(f"outputs/{version}/avg_var_infected.png")
+      avg_uninfected = plt.imread(f"outputs/{version}/avg_var_uninfected.png")
 
       st.warning(
         f"* We notice the average and variability images did not show "
@@ -31,7 +31,7 @@ def page_mildew_visualizer_body():
       st.write("---")
 
     if st.checkbox("Differences between average mildew infected and average uninfected leaf"):
-          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.jpg")
+          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
           st.warning(
             f"* We notice this study didn't show "
@@ -40,7 +40,7 @@ def page_mildew_visualizer_body():
 
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on the 'Create Montage' button")
-      my_data_dir = 'inputs/leave_dataset/leave_images'
+      my_data_dir = 'inputs/cherry-leaves_dataset/cherry-leave'
       labels = os.listdir(my_data_dir+ '/validation')
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)
       if st.button("Create Montage"):      
