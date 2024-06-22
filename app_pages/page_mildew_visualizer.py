@@ -9,11 +9,11 @@ from matplotlib.image import imread
 import itertools
 import random
 
-def page_mold_visualizer_body():
-    st.write("### Mold Visualizer")
+def page_mildew_visualizer_body():
+    st.write("### Mildew Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
-        f"differentiates a mold infected leave from an uninfected leave.")
+        f"differentiates a mildew infected leaf from an uninfected leaf.")
     
     version = 'v1'
     if st.checkbox("Difference between average and variability image"):
@@ -26,11 +26,11 @@ def page_mold_visualizer_body():
         f"patterns where we could intuitively differentiate one from another. " 
         f"However, a small difference in the colour pigment of the average images is seen for both labels.")
 
-      st.image(avg_mold, caption='Mold infected cherry leave - Average and Variability')
-      st.image(avg_healty, caption='Uninfected cherry leave - Average and Variability')
+      st.image(avg_mold, caption='Mildew infected cherry leaf - Average and Variability')
+      st.image(avg_healty, caption='Uninfected cherry leaf - Average and Variability')
       st.write("---")
 
-    if st.checkbox("Differences between average mold infected and average uninfected leave"):
+    if st.checkbox("Differences between average mildew infected and average uninfected leaf"):
           diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.jpg")
 
           st.warning(

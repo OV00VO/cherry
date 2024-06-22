@@ -1,7 +1,7 @@
-Cherry Mold Detection
+Cherry Leave Mold Detection
 ## How to use this repo
 
-1. Fork this repo and copy the https URL of your forked Walkthrough01 repo
+1. Fork this repo and copy the https URL of your forked Cherry repo
 
 1. Log into the cloud IDE with your GitHub account.
 
@@ -23,43 +23,43 @@ Your workspace is now ready to use. When you want to return to this project, you
 
 ## Dataset Content
 
-The dataset contains x images taken from x workflow. The leaves are either mold infected or uninfected.
+The dataset contains x images taken from x workflow. The leafs are either mildew infected or uninfected.
 
 ## Business Requirements
 
-As a Data Analyst, you are requested by the company to provide actionable insights and data-driven recommendations to a Cherry Plantage. The client is currently facing challenges in mold detection, especially with cherry leaves.
+As a Data Analyst, you are requested by the company to provide actionable insights and data-driven recommendations to a Cherry Plantage. The client is currently facing challenges in mildew detection, especially with cherry leafs.
 
-- 1 - The client is interested in having a study that visually differentiates a infected from an uninfected leave.
-- 2 - The client is interested in telling whether a given leave contains mold or not.
+- 1 - The client is interested in having a study that visually differentiates a infected from an uninfected cherry leaf.
+- 2 - The client is interested in telling whether a given leaf contains mildew or not.
 
 ## Hypothesis and how to validate?
 
-- We suspect mold on these leaves and they have clear marks/signs, typically for mold on the leave, differentiating them from uninfected leaves.
+- We suspect mold on these leafs and they have clear marks/signs, typically for mildew on the leaf, differentiating them from uninfected leafs.
   - An average image study can help to investigate it
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
 - **Business Requirement 1**: Data Visualization
 
-  - We will display the "mean" and "standard deviation" images for infected and uninfected leave.
-  - We will display the difference between average infected and uninfected leave.
-  - We will display an image montage for either infected or uninfected leave.
+  - We will display the "mean" and "standard deviation" images for infected and uninfected leaf.
+  - We will display the difference between average infected and uninfected leaf.
+  - We will display an image montage for either infected or uninfected leaf.
 
 - **Business Requirement 2**: Classification
-  - We want to predict if a given leave is infected or not with mold.
+  - We want to predict if a given leaf is infected or not with mildew.
   - We want to build a binary classifier and generate reports.
 
 ## ML Business Case
 
 ### MoldClf
 
-- We want an ML model to predict if a leave is infected with mold or not based on historical image data. It is a supervised model, a 2-class, single-label classification model.
+- We want an ML model to predict if a leaf is infected with mold or not based on historical image data. It is a supervised model, a 2-class, single-label classification model.
 - Our ideal outcome is to provide the medical team with a faster and more reliable diagnostic for mold detection.
 - The model success metrics are
   - Accuracy of x% or above on the test set.
-- The model output is defined as a flag, indicating if the leave has mold or not and the associated probability of being infected or not. As usual, the staff would take a picture of the leave and upload the picture to the App. The prediction is made on the fly (not in batches).
-- Heuristics: The current diagnostic needs an experienced staff and detailed inspection to distinguish infected and non-infected leaves. A leave is photographed and uploaded to the app. Visual criteria are used to detect mold on cherry leaves. It leaves room to produce inaccurate diagnostics due to human error. On top of that, specially trained staff and expertise could be conducted.
-- The training data to fit the model come from the X [x](https://x/). This dataset contains about x+ thousand images. We have extracted a subset of x images from this dataset and saved it to [Kaggle dataset directory](https://www.kaggle.com/codeinstitute/x/) for quicker model training.
+- The model output is defined as a flag, indicating if the leave has mmildew or not and the associated probability of being infected or not. As usual, the staff would take a picture of the leave and upload the picture to the App. The prediction is made on the fly (not in batches).
+- Heuristics: The current diagnostic needs an experienced staff and detailed inspection to distinguish infected and non-infected leaf. A leave is photographed and uploaded to the app. Visual criteria are used to detect mildew on cherry leaf. It leaves room to produce inaccurate diagnostics due to human error. On top of that, specially trained staff and expertise could be conducted.
+- The training data to fit the model come from the X [x](https://x/). This dataset contains about x+ thousand images. We have extracted a subset of x images from this dataset and saved it to [Kaggle dataset directory](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves) for quicker model training.
   - Train data - target: infected or not; features: all images
 
 ## Dashboard Design (Streamlit App User Interface)
@@ -68,26 +68,26 @@ As a Data Analyst, you are requested by the company to provide actionable insigh
 
 - Quick project summary
   - General Information
-    - Facts about mold on Cherry Leaves
+    - Facts about mildew on Cherry Leaves
   - Project Dataset
-    - The available dataset contains x out of +x thousand images taken from cherry leaves that are infected or uninfected with mold.
+    - The available dataset contains x out of +x thousand images taken from cherry leaves that are infected or uninfected with mildew.
   - Link to additional information
   - Business requirements
-    - The client is interested in having a study to differentiate between a parasite-contained and uninfected leave visually.
-    - The client is interested in whether a given cherry leave contains mold or not.
+    - The client is interested in having a study to differentiate between a infected and uninfected leaf visually.
+    - The client is interested in whether a given cherry leaf contains mildew or not.
 
 ### Page 2: Cells Visualizer
 
 - It will answer business requirement 1
   - Checkbox 1 - Difference between average and variability image
-  - Checkbox 2 - Differences between average infected and average uninfected leave
+  - Checkbox 2 - Differences between average infected and average uninfected leaf
   - Checkbox 3 - Image Montage
 
 ### Page 3: Malaria Detector
 
-- Business requirement 2 information - "The client is interested in telling whether a given cherry leave contains mold or not."
-- Link to download a set of mold-contained and uninfected leave images for live prediction.
-- User Interface with a file uploader widget. The user should upload multiple cherry leave images. It will display the image and a prediction statement, indicating if the leave is infected or not with mold and the probability associated with this statement.
+- Business requirement 2 information - "The client is interested in telling whether a given cherry leaf contains mildew or not."
+- Link to download a set of mildew-contained and uninfected leafs images for live prediction.
+- User Interface with a file uploader widget. The user should upload multiple cherry leaf images. It will display the image and a prediction statement, indicating if the leaf is infected or not with mildew and the probability associated with this statement.
 - Table with the image name and prediction results.
 - Download button to download table.
 
