@@ -1,3 +1,5 @@
+# Credits to Code Institute: All code below is either; 
+# re-modeled, re-structed or re-created to fit this project.
 import streamlit as st
 
 
