@@ -1,3 +1,9 @@
+.rmv
+jupyter_notebooks
 inputs
 outputs
+kaggle.json
+gitpod
 src/__pycache__
+app_pages/__pycache__
+workspace

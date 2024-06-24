@@ -10,13 +10,10 @@ from src.data_management import load_pkl_file
 
 
 def plot_predictions_probabilities(pred_proba, pred_class):
-    """
-    Plot prediction probability results
-    """
 
     prob_per_class = pd.DataFrame(
         data=[0, 0],
-        index={'Infected': 0, 'Uninfected': 1}.keys(),
+        index={'Uninfected': 0, 'Infected': 1}.keys(),
         columns=['Probability']
     )
     prob_per_class.loc[pred_class] = pred_proba
@@ -36,9 +33,7 @@ def plot_predictions_probabilities(pred_proba, pred_class):
 
 
 def resize_input_image(img, version):
-    """
-    Reshape image to average image size
-    """
+   
     image_shape = load_pkl_file(file_path=f"outputs/{version}/image_shape.pkl")
     img_resized = img.resize((image_shape[1], image_shape[0]), Image.LANCZOS)
     my_image = np.expand_dims(img_resized, axis=0)/255
@@ -47,15 +42,12 @@ def resize_input_image(img, version):
 
 
 def load_model_and_predict(my_image, version):
-    """
-    Load and perform ML prediction over live images
-    """
 
     model = load_model(f"outputs/{version}/mildew_detector_model.h5")
 
     pred_proba = model.predict(my_image)[0, 0]
 
-    target_map = {v: k for k, v in {'Infected': 0, 'Uninfected': 1}.items()}
+    target_map = {v: k for k, v in {'Uninfected': 0, 'Infected': 1}.items()}
     pred_class = target_map[pred_proba > 0.5]
     if pred_class == target_map[0]:
         pred_proba = 1 - pred_proba
